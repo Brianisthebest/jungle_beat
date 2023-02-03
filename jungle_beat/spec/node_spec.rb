@@ -17,7 +17,7 @@ RSpec.describe Node do
 
   it 'can call next_node' do
     node = Node.new("plop")
-require 'pry'; binding.pry
+
     expect(node.next_node).to eq(nil)
   end
 
