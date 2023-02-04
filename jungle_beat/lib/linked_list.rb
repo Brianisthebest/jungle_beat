@@ -39,12 +39,12 @@ class LinkedList
       @head = Node.new(sound)
     else 
       new_node = Node.new(sound)
-      before_node = current_node
+      previous_node = current_node
       index.times do
-       current_node = current_node.next_node
-       new_node.next_node = current_node
+        current_node = current_node.next_node
+        new_node.next_node = current_node
       end
-      before_node.next_node = new_node
+      previous_node.next_node = new_node
     end
   end
 
@@ -60,5 +60,18 @@ class LinkedList
       current_node = current_node.next_node
     end
     node_sounds.lstrip!
+  end
+
+  def find(index, amount)
+    found_nod_sounds = ''
+    current_node = @head
+    index.times do
+      current_node = current_node.next_node
+    end
+    amount.times do
+      found_nod_sounds = found_nod_sounds + " #{current_node.data}"
+      current_node = current_node.next_node
+    end
+    found_nod_sounds.lstrip!
   end
 end
