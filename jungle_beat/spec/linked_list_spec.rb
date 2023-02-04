@@ -18,34 +18,37 @@ RSpec.describe LinkedList do
 
   describe '#append' do
     list = LinkedList.new
-    it 'can append single additions' do
+    it 'can append a single node' do
       list = LinkedList.new
       list.append('doop')
 
       expect(list.append('doop')).to eq('doop')
-      expect(list.head).to be_instance_of(Node)
-      expect(list.head.next_node).to be(nil)
+      expect(list.head).to be_a(Node)
+      expect(list.head.next_node).to eq(nil)
     end
 
     it 'can append multiple additions' do
       list = LinkedList.new
       list.append('doop')
+      list.append('deep')
 
-      expect(list.append('doop')).to eq('doop')
-      expect(list.head).to be_instance_of(Node)
-      expect(list.head.next_node).to be(nil)
+      expect(list.)
+      expect(list.head.next_node).to be_a(Node)
+
     end
   end
 
   describe '#count' do
-    it 'can count a single node' do
+    it 'can count how many nodes' do
       list = LinkedList.new
       list.append('doop')
       list.count
 
       expect(list.count).to be(1)
     end
+
   end
+
   describe '$to_string' do
     it 'stores a string' do
       list = LinkedList.new
