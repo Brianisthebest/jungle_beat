@@ -20,6 +20,34 @@ class LinkedList
     sound
   end
 
+  def prepend(sound)
+    @node_counter += 1
+    current_node = @head
+    if current_node == nil
+      @head = Node.new(sound)
+    else
+      new_head = Node.new(sound)
+      new_head.next_node = current_node
+      @head = new_head
+    end
+  end
+
+  def insert(index, sound)
+    @node_counter += 1
+    current_node = @head
+    if current_node == nil
+      @head = Node.new(sound)
+    else 
+      new_node = Node.new(sound)
+      before_node = current_node
+      index.times do
+       current_node = current_node.next_node
+       new_node.next_node = current_node
+      end
+      before_node.next_node = new_node
+    end
+  end
+
   def count
     @node_counter
   end

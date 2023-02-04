@@ -24,7 +24,6 @@ RSpec.describe LinkedList do
 
       expect(list.append('doop')).to eq('doop')
       expect(list.head).to be_a(Node)
-
       expect(list.head.next_node).to be(nil)
     end
 
@@ -34,7 +33,7 @@ RSpec.describe LinkedList do
       # list.append('deep')
 
       expect(list.append('deep')).to eq('deep')
-      #Apparently this runs the method as well. GOOD TO KNOW
+      # Apparently this runs the method as well. GOOD TO KNOW
       expect(list.head.next_node).to be_a(Node)
       expect(list.count).to eq(2)
     end
@@ -65,6 +64,31 @@ RSpec.describe LinkedList do
       list.append('wah')
 
       expect(list.to_string).to eq('wee wah')
+    end
+  end
+
+  describe '#prepend' do
+    it 'adds a node to the beginning, and makes it the new head' do
+      list = LinkedList.new
+      list.append('plop')
+
+      expect(list.to_string).to eq('plop')
+      list.append('suu')
+      list.prepend('dop')
+
+      expect(list.to_string).to eq('dop plop suu')
+      expect(list.count).to eq(3)
+    end
+  end
+
+  describe '#insert' do
+    it 'inserts a node into the list' do
+      list = LinkedList.new
+      list.append('shoo')
+      list.append('bop')
+      list.insert(1, 'woo')
+
+      expect(list.to_string).to eq('shoo woo bop')
     end
   end
 end
