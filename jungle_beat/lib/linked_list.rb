@@ -6,17 +6,18 @@ class LinkedList
     @node_counter = 0
   end
 
-  def append(new_node)
+  def append(sound)
     @node_counter += 1
-    if @head == nil
-      @head = Node.new(new_node)
+    current_node = @head
+    if current_node == nil
+      @head = Node.new(sound)
     else
-      current_node = @head
       while current_node.next_node != nil
         current_node = current_node.next_node
       end
+      current_node.next_node = Node.new(sound)
     end
-   @head.data
+    sound
   end
 
   def count
@@ -24,6 +25,12 @@ class LinkedList
   end
 
   def to_string
-    @head.data
+   node_sounds = ''
+   current_node = @head
+    until current_node == nil
+      node_sounds = node_sounds + " #{current_node.data}"
+      current_node = current_node.next_node
+    end
+    node_sounds.lstrip!
   end
 end

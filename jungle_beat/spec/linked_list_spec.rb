@@ -20,21 +20,23 @@ RSpec.describe LinkedList do
     list = LinkedList.new
     it 'can append a single node' do
       list = LinkedList.new
-      list.append('doop')
+      # list.append('doop')
 
       expect(list.append('doop')).to eq('doop')
       expect(list.head).to be_a(Node)
-      expect(list.head.next_node).to eq(nil)
+
+      expect(list.head.next_node).to be(nil)
     end
 
     it 'can append multiple additions' do
       list = LinkedList.new
       list.append('doop')
-      list.append('deep')
+      # list.append('deep')
 
-      expect(list.)
+      expect(list.append('deep')).to eq('deep')
+      #Apparently this runs the method as well. GOOD TO KNOW
       expect(list.head.next_node).to be_a(Node)
-
+      expect(list.count).to eq(2)
     end
   end
 
@@ -55,6 +57,14 @@ RSpec.describe LinkedList do
       list.append('doop')
 
       expect(list.to_string).to eq('doop')
+    end
+
+    it 'stores multiple node strings' do
+      list = LinkedList.new
+      list.append('wee')
+      list.append('wah')
+
+      expect(list.to_string).to eq('wee wah')
     end
   end
 end
