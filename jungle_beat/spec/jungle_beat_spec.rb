@@ -38,7 +38,13 @@ RSpec.describe JungleBeat do
       expect(jb.append('deep doo ditt woo hoo shu')).to eq('deep doo ditt woo hoo shu')
       expect(jb.count).to be(6)
       
-      jb.play
+      jb.play #WOWIE!
+    end
+
+    it 'will only accept allowed sounds and reject the others' do
+      jb = JungleBeat.new('deep')
+
+      expect(jb.append('Mississippi')).to be.(0)
     end
   end
 end

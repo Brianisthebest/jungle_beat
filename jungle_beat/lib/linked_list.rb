@@ -8,7 +8,7 @@ class LinkedList
 
   def append(sound)
     @node_counter += 1
-    current_node = @head #Failsafe to make sure we always have and start at a head
+    current_node = @head #Make sure we always have and start at a head
     if current_node == nil 
       @head = Node.new(sound)
     else
@@ -49,7 +49,7 @@ class LinkedList
   end
 
   def count
-    @node_counter #Counts the nodes
+    node_counter #Counts the nodes
   end
 
   def to_string
