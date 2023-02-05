@@ -1,15 +1,18 @@
 class JungleBeat
-  attr_reader :linked_list
+  attr_reader :list
   
   def initialize
-    @linked_list = linked_list
-  end
-
-  def list
-    linked_list = LinkedList.new
+    @list = LinkedList.new
   end
 
   def append(sounds)
-    @sounds = sounds
+    sounds.split(' ').each do |sound|
+      list.append(sound)
+    end
+    sounds
+  end
+
+  def count
+    list.count
   end
 end

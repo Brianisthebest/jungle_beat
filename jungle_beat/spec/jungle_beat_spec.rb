@@ -23,14 +23,13 @@ RSpec.describe JungleBeat do
     it 'can take in a string and set the head and next_node' do
       jb = JungleBeat.new
       jb.list
-# require 'pry'; binding.pry
+
       expect(jb.append('deep doo ditt')).to eq('deep doo ditt')
       expect(jb.list.head.data).to eq('deep')
       expect(jb.list.head.next_node.data).to eq('doo')
       expect(jb.append('woo hoo shu')).to eq('woo hoo shu')
       expect(jb.count).to eq(6)
     end
-
   end
 
 end
