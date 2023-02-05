@@ -88,11 +88,11 @@ class LinkedList
 
   def pop
     current_node = @head
-    @node_counter = node_counter - 2
-    node_counter.times do
+    until current_node.next_node.next_node == nil
       current_node = current_node.next_node
-      last_node = current_node.next_node
     end
+    last_node = current_node.next_node
+    current_node.next_node = nil
     last_node.data
   end
 end
