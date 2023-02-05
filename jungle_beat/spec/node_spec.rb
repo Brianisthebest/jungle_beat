@@ -9,13 +9,13 @@ RSpec.describe Node do
     expect(node).to be_instance_of(Node)
   end
 
-  it 'can call data' do
+  it 'can call the nodes data' do
    node = Node.new("plop")
 
    expect(node.data).to eq("plop")
   end
 
-  it 'can call next_node' do
+  it 'can check value of next node' do
     node = Node.new("plop")
 
     expect(node.next_node).to eq(nil)

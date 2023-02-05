@@ -47,7 +47,6 @@ RSpec.describe LinkedList do
 
       expect(list.count).to be(1)
     end
-
   end
 
   describe '$to_string' do
@@ -90,6 +89,7 @@ RSpec.describe LinkedList do
 
       expect(list.to_string).to eq('shoo woo bop')
     end
+  end
 
     describe '#find' do
       it 'will find the specified node' do
@@ -105,5 +105,30 @@ RSpec.describe LinkedList do
         expect(list.find(1,3)).to eq('woo shi shu')
       end
     end
-  end
+
+    describe '#includes?' do
+      it 'will return true or false if the sound is or is not included' do
+        list = LinkedList.new
+        list.append('deep')
+        
+        expect(list.include?('deep')).to be(true)
+        expect(list.include?('dep')).to be(false)
+      end
+    end
+
+    describe '#pop' do
+      it 'will remove the last element' do
+        list = LinkedList.new
+        list.append('deep')
+        list.append('woo')
+        list.append('shi')
+        list.append('shu')
+        list.append('blop')
+
+        expect(list.pop).to eq("blop")
+        expect(list.pop).to eq('shu')
+        expect(list.to_string).to eq('deep woo shi')
+      end
+    end
 end
+

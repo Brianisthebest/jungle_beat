@@ -62,16 +62,37 @@ class LinkedList
     node_sounds.lstrip!
   end
 
-  def find(index, amount)
-    found_nod_sounds = ''
+  def find(index, length)
+    found_node_sounds = ''
     current_node = @head
     index.times do
       current_node = current_node.next_node
     end
-    amount.times do
-      found_nod_sounds = found_nod_sounds + " #{current_node.data}"
+    length.times do
+      found_node_sounds = found_node_sounds + " #{current_node.data}"
       current_node = current_node.next_node
     end
-    found_nod_sounds.lstrip!
+    found_node_sounds.lstrip!
+  end
+
+  def include?(sound)
+    current_node = @head
+    node_counter.times do
+      if current_node.data == sound
+        return true
+      else
+        return false
+      end
+    end
+  end
+
+  def pop
+    current_node = @head
+    @node_counter = node_counter - 2
+    node_counter.times do
+      current_node = current_node.next_node
+      last_node = current_node.next_node
+    end
+    last_node.data
   end
 end
