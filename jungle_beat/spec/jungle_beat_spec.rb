@@ -19,7 +19,7 @@ RSpec.describe JungleBeat do
     end
   end
 
-  describe '#appemd' do
+  describe '#append' do
     it 'can take in a string and set the head and next_node' do
       jb = JungleBeat.new
       jb.list
@@ -32,4 +32,13 @@ RSpec.describe JungleBeat do
     end
   end
 
+  describe '#play' do
+    it 'will take in our nodes and play them' do
+      jb = JungleBeat.new
+      expect(jb.append('deep doo ditt woo hoo shu')).to eq('deep doo ditt woo hoo shu')
+      expect(jb.count).to be(6)
+      
+      jb.play
+    end
+  end
 end

@@ -9,6 +9,7 @@ RSpec.describe LinkedList do
     
       expect(list).to be_instance_of(LinkedList)
     end
+
     it 'has no head when created' do
       list = LinkedList.new
 
@@ -17,7 +18,6 @@ RSpec.describe LinkedList do
   end
 
   describe '#append' do
-    list = LinkedList.new
     it 'can append a single node' do
       list = LinkedList.new
       # list.append('doop')
