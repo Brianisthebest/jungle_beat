@@ -1,8 +1,9 @@
 class JungleBeat
-  attr_reader :list
+  attr_reader :list, :sounds
   
-  def initialize
+  def initialize(sounds = 'deep')
     @list = LinkedList.new
+    @sounds = sounds
   end
 
   def append(sounds)
@@ -12,11 +13,15 @@ class JungleBeat
       if valid_sounds.include?(sound)
         list.append(sound)
         stored_sounds = stored_sounds + " #{sound}"
+      # require 'pry'; binding.pry
       else
+        # require 'pry'; binding.pry
+        sounds.delete!(sounds)
+        require 'pry'; binding.pry
+        # sounds = 0
       end
-      
     end
-    stored_sounds.lstrip! #Or just list sounds and delete line 10 and 13?
+    stored_sounds.lstrip! 
   end
 
   def count
@@ -24,6 +29,6 @@ class JungleBeat
   end
 
   def play
-    `say -r 500 -v Alex #{list.to_string}` #IT'S HAPPENING!!!
+    `say -r 500 -v Boing #{list.to_string}` #IT'S HAPPENING!!!
   end
 end

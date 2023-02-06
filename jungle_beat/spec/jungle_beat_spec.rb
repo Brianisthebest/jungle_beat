@@ -31,10 +31,10 @@ RSpec.describe JungleBeat do
       expect(jb.count).to eq(6)
     end
 
-    xit 'will only accept allowed sounds and reject the others' do
+    it 'will only accept allowed sounds and reject the others' do
       jb = JungleBeat.new('deep')
 
-      expect(jb.append('Mississippi')).to be.(0)
+      expect(jb.append('Mississippi')).to eq.(0)
     
     end
   end
