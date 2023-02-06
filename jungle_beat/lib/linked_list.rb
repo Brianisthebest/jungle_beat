@@ -75,7 +75,7 @@ class LinkedList
     found_node_sounds.lstrip! #Bye again " "
   end
 
-  def include?(sound) 
+  def includes?(sound) 
     current_node = @head
     node_counter.times do #Search through the entire list
       if current_node.data == sound
