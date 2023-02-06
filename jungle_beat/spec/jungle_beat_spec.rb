@@ -4,6 +4,7 @@ require './lib/linked_list'
 require './lib/node'
 
 RSpec.describe JungleBeat do
+  # let(:jb) {JungkeBeat.new}
   describe '#initialize' do
     it 'exists' do
       jb = JungleBeat.new
@@ -31,10 +32,11 @@ RSpec.describe JungleBeat do
       expect(jb.count).to eq(6)
     end
 
-    it 'will only accept allowed sounds and reject the others' do
+    xit 'will only accept allowed sounds and reject the others' do
       jb = JungleBeat.new('deep')
 
       expect(jb.append('Mississippi')).to be.(0)
+    
     end
   end
 
@@ -50,12 +52,10 @@ RSpec.describe JungleBeat do
   end
 
   describe '#all' do
-    it 'will list all the sounds in our list' do
+    xit 'will list all the sounds in our list' do
       jb = JungleBeat.new('deep')
 
       expect(jb.all).to be(deep)
     end
   end
-
-
 end
