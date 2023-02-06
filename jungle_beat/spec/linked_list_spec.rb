@@ -13,7 +13,7 @@ RSpec.describe LinkedList do
     it 'has no head when created' do
       list = LinkedList.new
 
-      expect(list.head).to be(nil)
+      expect(list.head).to be nil
     end
   end
 
@@ -24,7 +24,7 @@ RSpec.describe LinkedList do
 
       expect(list.append('doop')).to eq('doop')
       expect(list.head).to be_a(Node)
-      expect(list.head.next_node).to be(nil)
+      expect(list.head.next_node).to be nil
     end
 
     it 'can append multiple additions' do
@@ -111,8 +111,8 @@ RSpec.describe LinkedList do
         list = LinkedList.new
         list.append('deep')
         
-        expect(list.include?('deep')).to be(true)
-        expect(list.include?('dep')).to be(false)
+        expect(list.include?('deep')).to be true
+        expect(list.include?('dep')).to be false
       end
     end
 
