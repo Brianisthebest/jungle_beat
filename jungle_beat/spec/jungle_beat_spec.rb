@@ -16,7 +16,7 @@ RSpec.describe JungleBeat do
       jb = JungleBeat.new
 
       expect(jb.list).to be_a(LinkedList)
-      expect(jb.list.head).to eq(nil)
+      expect(jb.list.head).to be nil
     end
   end
 
