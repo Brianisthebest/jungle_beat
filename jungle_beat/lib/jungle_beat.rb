@@ -9,11 +9,11 @@ class JungleBeat
     valid_sounds = ['tee', 'dee', 'deep', 'bop', 'boop', 'la', 'na', 'doo', 'ditt', 'woo', 'hoo', 'shu']
     stored_sounds = ''
     sounds.split(' ').each do |sound| #Splits our string and sends them on their merry way to list.append
-      # if valid_sounds.include?(sound)
+      if valid_sounds.include?(sound)
         list.append(sound)
         stored_sounds = stored_sounds + " #{sound}"
-      # else
-      # end
+      else
+      end
       
     end
     stored_sounds.lstrip! #Or just list sounds and delete line 10 and 13?
