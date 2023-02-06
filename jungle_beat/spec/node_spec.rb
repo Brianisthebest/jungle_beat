@@ -18,7 +18,7 @@ RSpec.describe Node do
   it 'can check value of next node' do
     node = Node.new("plop")
 
-    expect(node.next_node).to eq(nil)
+    expect(node.next_node).to eq nil
   end
 
 end
