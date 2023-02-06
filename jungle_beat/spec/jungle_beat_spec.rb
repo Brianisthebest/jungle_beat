@@ -4,7 +4,6 @@ require './lib/linked_list'
 require './lib/node'
 
 RSpec.describe JungleBeat do
-  # let(:jb) {JungkeBeat.new}
   describe '#initialize' do
     it 'exists' do
       jb = JungleBeat.new
