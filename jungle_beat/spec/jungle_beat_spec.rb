@@ -77,4 +77,15 @@ RSpec.describe JungleBeat do
       jb.play
     end
   end
+
+  describe '#voice' do
+    it 'will change the voice' do
+      jb = JungleBeat.new
+      jb.append('deep doo ditt woo hoo shu')
+      jb.play
+
+      jb.voice('Albert')
+      jb.play
+    end
+  end
 end
