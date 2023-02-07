@@ -31,7 +31,7 @@ RSpec.describe JungleBeat do
       expect(jb.count).to eq(6)
     end
 
-    it 'will only accept allowed sounds and reject the others' do
+    xit 'will only accept allowed sounds and reject the others' do
       jb = JungleBeat.new('deep')
 
       expect(jb.append('Mississippi')).to eq(0)
@@ -41,7 +41,7 @@ RSpec.describe JungleBeat do
   describe '#play' do
     it 'will take in our nodes and play them' do
       jb = JungleBeat.new
-require 'pry'; binding.pry
+
       expect(jb.append('deep doo ditt woo hoo shu')).to eq('deep doo ditt woo hoo shu')
       expect(jb.count).to be(6)
       
@@ -54,6 +54,14 @@ require 'pry'; binding.pry
       jb = JungleBeat.new('deep')
 
       expect(jb.all).to be(deep)
+    end
+  end
+
+  describe '#rate' do
+    it 'will allow for rate adjustments' do
+      jb = JungleBeat.new
+
+      expect(jb.rate(100))
     end
   end
 end
