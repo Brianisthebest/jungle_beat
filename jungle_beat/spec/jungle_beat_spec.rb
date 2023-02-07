@@ -62,7 +62,18 @@ RSpec.describe JungleBeat do
       jb = JungleBeat.new
       jb.append('deep doo ditt woo hoo shu')
 
-      expect(jb.rate(100))
+      jb.rate(100)
+      jb.play
+    end
+  end
+
+  describe '#reset_rate' do
+    it 'will reset the rate to 500' do
+      jb = JungleBeat.new
+      jb.append('deep doo ditt woo hoo shu')
+      jb.rate(100)
+      jb.play
+      jb.rate_reset
       jb.play
     end
   end

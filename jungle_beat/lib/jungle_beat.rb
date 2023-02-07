@@ -31,4 +31,8 @@ class JungleBeat
   def play
     `say -r #{@rate} -v Boing #{list.to_string}` #IT'S HAPPENING!!!
   end
+
+  def rate_reset
+    @rate = 500
+  end
 end
