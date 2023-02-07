@@ -60,8 +60,10 @@ RSpec.describe JungleBeat do
   describe '#rate' do
     it 'will allow for rate adjustments' do
       jb = JungleBeat.new
+      jb.append('deep doo ditt woo hoo shu')
 
       expect(jb.rate(100))
+      jb.play
     end
   end
 end
