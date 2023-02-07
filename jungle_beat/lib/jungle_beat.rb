@@ -1,8 +1,10 @@
 class JungleBeat
-  attr_reader :list, :sounds
+  attr_reader :list
+  attr_accessor :rate
   
   def initialize(sounds = nil)
     @list = LinkedList.new
+    @rate = 500
     if sounds != nil
        append(sounds)
     end
@@ -24,11 +26,15 @@ class JungleBeat
   end
 
   def rate(rate_speed)
-    @rate_speed = rate_speed
+    @rate = rate_speed
     #add notes to see if I'm understanding git pulls correctly
   end
 
   def play
-    `say -r #500 -v Boing #{list.to_string}` #IT'S HAPPENING!!!
+    `say -r 500 -v Boing #{list.to_string}` #IT'S HAPPENING!!!
+  end
+
+  def play_test
+    `say -r 500 -v Boing #{list.to_string}`
   end
 end
