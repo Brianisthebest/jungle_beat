@@ -29,6 +29,6 @@ class JungleBeat
   end
 
   def play
-    `say -r #500 -v Boing #{list.to_string}` #IT'S HAPPENING!!!
+    `say -r #{@rate} -v Boing #{list.to_string}` #IT'S HAPPENING!!!
   end
 end
