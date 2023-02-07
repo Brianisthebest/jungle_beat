@@ -63,7 +63,7 @@ RSpec.describe JungleBeat do
       jb.append('deep doo ditt woo hoo shu')
       
       jb.rate(100)
-      jb.play_test
+      jb.play
     end
   end
 end
