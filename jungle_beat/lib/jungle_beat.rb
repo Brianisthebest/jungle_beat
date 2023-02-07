@@ -1,8 +1,11 @@
 class JungleBeat
-  attr_reader :list
+  attr_reader :list, :sounds
   
-  def initialize
+  def initialize(sounds = nil)
     @list = LinkedList.new
+    if sounds != nil
+       append(sounds)
+    end
   end
 
   def append(sounds)
@@ -15,11 +18,16 @@ class JungleBeat
     stored_sounds.lstrip! #Or just list sounds and delete line 10 and 13?
   end
 
+
   def count
     list.count
   end
 
+  def rate(rate_speed)
+    @rate_speed = rate_speed
+  end
+
   def play
-    `say -r 500 -v Alex #{list.to_string}` #IT'S HAPPENING!!!
+    `say -r #500 -v Boing #{list.to_string}` #IT'S HAPPENING!!!
   end
 end

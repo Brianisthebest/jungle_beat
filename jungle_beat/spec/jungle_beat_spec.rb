@@ -34,8 +34,7 @@ RSpec.describe JungleBeat do
     xit 'will only accept allowed sounds and reject the others' do
       jb = JungleBeat.new('deep')
 
-      expect(jb.append('Mississippi')).to be.(0)
-    
+      expect(jb.append('Mississippi')).to eq(0)
     end
   end
 
@@ -55,6 +54,14 @@ RSpec.describe JungleBeat do
       jb = JungleBeat.new('deep')
 
       expect(jb.all).to be(deep)
+    end
+  end
+
+  describe '#rate' do
+    it 'will allow for rate adjustments' do
+      jb = JungleBeat.new
+
+      expect(jb.rate(100))
     end
   end
 end
