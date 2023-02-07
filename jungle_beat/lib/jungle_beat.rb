@@ -25,6 +25,7 @@ class JungleBeat
 
   def rate(rate_speed)
     @rate_speed = rate_speed
+    #add notes to see if I'm understanding git pulls correctly
   end
 
   def play
