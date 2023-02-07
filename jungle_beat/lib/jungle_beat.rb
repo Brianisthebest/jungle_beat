@@ -8,7 +8,7 @@ class JungleBeat
   def append(sounds)
     valid_sounds = ['tee', 'dee', 'deep', 'bop', 'boop', 'la', 'na', 'doo', 'ditt', 'woo', 'hoo', 'shu']
     stored_sounds = ''
-    sounds.split(' ').each do |sound| #Splits our string and sends them on their merry way to list.append
+    sounds.split.each do |sound| #Splits our string and sends them on their merry way to list.append
         list.append(sound)
         stored_sounds = stored_sounds + " #{sound}"
     end
