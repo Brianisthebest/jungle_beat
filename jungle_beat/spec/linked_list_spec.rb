@@ -86,7 +86,7 @@ RSpec.describe LinkedList do
       list.append('shoo')
       list.append('bop')
       list.insert(1, 'woo')
-
+# require 'pry'; binding.pry
       expect(list.to_string).to eq('shoo woo bop')
     end
   end
@@ -111,8 +111,8 @@ RSpec.describe LinkedList do
         list = LinkedList.new
         list.append('deep')
         
-        expect(list.include?('deep')).to be true
-        expect(list.include?('dep')).to be false
+        expect(list.includes?('deep')).to be true
+        expect(list.includes?('dep')).to be false
       end
     end
 
