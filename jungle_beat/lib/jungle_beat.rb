@@ -35,11 +35,15 @@ class JungleBeat
     `say -r #{@rate} -v #{@voice} #{list.to_string}` #IT'S HAPPENING!!!
   end
 
-  def rate_reset
+  def reset_rate
     @rate = 500
   end
 
   def voice(new_voice)
     @voice = new_voice
+  end
+
+  def reset_voice
+    @voice = 'Boing'
   end
 end
