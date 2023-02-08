@@ -73,7 +73,7 @@ RSpec.describe JungleBeat do
       jb.append('deep doo ditt woo hoo shu')
       jb.rate(100)
       jb.play
-      jb.rate_reset
+      jb.reset_rate
       jb.play
     end
   end
@@ -84,7 +84,23 @@ RSpec.describe JungleBeat do
       jb.append('deep doo ditt woo hoo shu')
       jb.play
 
+      jb.rate(100)
       jb.voice('Albert')
+      jb.play
+      jb.reset_rate
+    end
+  end
+
+  describe '#reset_voice' do
+    it 'will reset the voice to Boing' do
+      jb = JungleBeat.new
+      jb.append('deep doo ditt woo hoo shu')
+      jb.play
+
+      jb.rate(100)
+      jb.voice('Albert')
+      jb.play
+      jb.reset_voice
       jb.play
     end
   end
